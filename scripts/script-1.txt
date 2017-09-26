@@ -1,0 +1,22 @@
+-- here I show:
+-- 1- how to create a database
+-- 2- how to create a table with definition of the SCHIMA, DELIMITATION FORMAT, FILE TYPE
+-- 3- how to load the data from local address inot the hive warehouse as a table
+-- to tun this script copy the following bash command:
+-- hive -f 'home/Documents/scripts/script-1.txt'
+
+CREATE DATABASE IF NOT EXISTS cards;
+
+use cards;
+
+CREATE TABLE deckofcards (
+color string,
+pip string,
+suit string
+)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '|'
+STORED AS TEXTFILE;
+
+LOAD DATA LOCAL INPATH '/home/cloudera/Documents/sf/data/cards/deckofcards.txt' INTO TABLE deckofcards;
+
+show tables;

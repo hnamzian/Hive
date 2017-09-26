@@ -1,0 +1,18 @@
+-- here I drop the table "deckofcards" in database "cards.db" and the also I'll drop the database cards.db"
+-- to tun this script copy the following bash command:
+-- hive -f 'home/Documents/scripts/script-2.txt'
+
+SHOW DATABASES;
+
+use cards;
+
+SHOW TABLES;
+
+DROP TABLE deckofcards;
+
+SHOW TABLES;
+
+DROP DATABASE cards;
+
+SHOW DATABASES;
+
